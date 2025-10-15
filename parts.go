@@ -36,3 +36,12 @@ var subjectName = map[Subject]string{
 func (subject Subject) String() string {
 	return subjectName[subject]
 }
+
+type SparkTable struct {
+	Subject
+	subType     string
+	descriptor1 string
+	descriptor2 string
+	options1    []string
+	options2    []string
+}
