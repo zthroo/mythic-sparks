@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
-	fmt.Println("This will be a prompt eventually.")
+	fmt.Println(Subject(rand.Intn(int(subjectCount) - 1)))
 }
