@@ -36,35 +36,3 @@ var subjectName = map[Subject]string{
 func (subject Subject) String() string {
 	return subjectName[subject]
 }
-
-type NatureType int
-
-const (
-	Land NatureType = iota
-	Sky
-	Water
-	Weather
-	Flora
-	Fauna
-	Feature
-	Wonder
-	Otherworld
-	natureTypeCount
-)
-
-var natureTypeName = map[NatureType]string{
-	Land:       "Land",
-	Sky:        "Sky",
-	Water:      "Water",
-	Weather:    "Combat",
-	Flora:      "Flora",
-	Fauna:      "Fauna",
-	Feature:    "Feature",
-	Wonder:     "Wonder",
-	Otherworld: "Otherworld",
-}
-
-// have the nature type show up as its name rather than the number value
-func (natureType NatureType) String() string {
-	return natureTypeName[natureType]
-}
