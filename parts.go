@@ -67,11 +67,16 @@ func GetAndPrintSparkResult(subject Subject, num int) {
 	}
 }
 
-func getSparkTable(subject Subject, table string) (SparkTable, error) {
+func getSparkTable(subject Subject, tableName string) (SparkTable, error) {
 	switch {
 	case subject == Subject(0): //Nature
-		return natureTableMap[table], nil
+		table, ok := natureTableMap[tableName]
+		if ok {
+			return table, nil
+		} else {
+			return natureTableMap[tableName], errors.New("No spark table for " + subject.String() + " and " + tableName)
+		}
 	default:
-		return natureTableMap[table], errors.New("No spark table for " + subject.String() + " and " + table) //TODO determine better thing to return than a default table on default case here
+		return natureTableMap[tableName], errors.New("No spark table for " + subject.String() + " and " + tableName) //TODO determine better thing to return than a default table on default case here
 	}
 }

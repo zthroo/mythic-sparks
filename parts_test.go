@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"reflect"
 	"testing"
 )
@@ -14,9 +15,12 @@ func TestGetSparkTableWithExistingTable(t *testing.T) {
 }
 
 func TestGetSparkTableWithNonxistantTable(t *testing.T) {
-
-}
-
-func TestGetSparkTableWithNonxistantSubject(t *testing.T) {
-
+	want := errors.New("No spark table for " + Nature.String() + " and " + "TEST")
+	table, err := getSparkTable(Nature, "TEST")
+	if err == nil {
+		t.Errorf(`getSparkTable(Nature, "TEST") error = %q, want nil. table = %v`, err, table)
+	}
+	if err.Error() != want.Error() {
+		t.Errorf(`getSparkTable(Nature, "TEST") error = %q, want match for %v`, err, want)
+	}
 }
