@@ -16,8 +16,8 @@ func getAndPrintSparkResult(subject Subject, num int) {
 
 	var table = getSparkTable(subject, NatureType(num).String())
 
-	fmt.Println(table.descriptor1, ": ", table.options1[rand.Intn(len(table.options1))])
-	fmt.Println(table.descriptor2, ": ", table.options2[rand.Intn(len(table.options2))])
+	fmt.Println(table.descriptor1 + ": " + table.options1[rand.Intn(len(table.options1))])
+	fmt.Println(table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))])
 }
 
 func getSparkTable(subject Subject, table string) SparkTable {

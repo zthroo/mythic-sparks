@@ -45,7 +45,6 @@ var landCharacterSlice = []string{
 	"Vivid",
 	"Sodden",
 	"Lush",
-	"landCharacterCount",
 }
 
 // Second of two land descriptors
