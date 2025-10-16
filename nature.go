@@ -45,7 +45,6 @@ var landCharacterSlice = []string{
 	"Vivid",
 	"Sodden",
 	"Lush",
-	"landCharacterCount",
 }
 
 // Second of two land descriptors
@@ -65,3 +64,7 @@ var landscapeSlice = []string{
 }
 
 var landSparkTable = SparkTable{Nature, NatureType(0).String(), "Character", "Landscape", landCharacterSlice, landscapeSlice}
+
+var natureTableMap = map[string]SparkTable{
+	NatureType(0).String(): landSparkTable,
+}

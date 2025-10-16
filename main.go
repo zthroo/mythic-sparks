@@ -13,6 +13,18 @@ func getAndPrintSparkResult(subject Subject, num int) {
 	fmt.Println("Spark:")
 	fmt.Println(subject)
 	fmt.Println(NatureType(num))
-	fmt.Println(landSparkTable.descriptor1, ": ", landSparkTable.options1[rand.Intn(len(landSparkTable.options1))]) //TODO: spark table not hardcoded
-	fmt.Println(landSparkTable.descriptor2, ": ", landSparkTable.options2[rand.Intn(len(landSparkTable.options2))])
+
+	var table = getSparkTable(subject, NatureType(num).String())
+
+	fmt.Println(table.descriptor1 + ": " + table.options1[rand.Intn(len(table.options1))])
+	fmt.Println(table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))])
+}
+
+func getSparkTable(subject Subject, table string) SparkTable {
+	switch {
+	case subject == Subject(0): //Nature
+		return natureTableMap[table]
+	default:
+		return natureTableMap[table]
+	}
 }
