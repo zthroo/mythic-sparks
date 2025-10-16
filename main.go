@@ -7,6 +7,7 @@ import (
 
 func main() {
 	getAndPrintSparkResult(Nature, 0)
+	getAndPrintSparkResult(Nature, 1)
 }
 
 func getAndPrintSparkResult(subject Subject, num int) {

@@ -65,6 +65,41 @@ var landscapeSlice = []string{
 
 var landSparkTable = SparkTable{Nature, NatureType(0).String(), "Character", "Landscape", landCharacterSlice, landscapeSlice}
 
+// First of two sky descriptors
+var skyToneSlice = []string{
+	"Glittering",
+	"Violet",
+	"Sapphire",
+	"Pale",
+	"Fiery",
+	"Ivory",
+	"Slate",
+	"Pink",
+	"Golden",
+	"Bloody",
+	"Bright",
+	"Inky",
+}
+
+// Second of two sky descriptors
+var skyTextureSlice = []string{
+	"Aurora",
+	"Haze",
+	"Marble",
+	"Glow",
+	"Billows",
+	"Swirl",
+	"Streaks",
+	"Dapple",
+	"Rays",
+	"Pillars",
+	"Shimmer",
+	"Swells",
+}
+
+var skySparkTable = SparkTable{Nature, NatureType(1).String(), "Tone", "Texture", skyToneSlice, skyTextureSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
+	NatureType(1).String(): skySparkTable,
 }
