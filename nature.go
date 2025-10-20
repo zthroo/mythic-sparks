@@ -19,7 +19,7 @@ var natureTypeName = map[NatureType]string{
 	Land:       "Land",
 	Sky:        "Sky",
 	Water:      "Water",
-	Weather:    "Combat",
+	Weather:    "Weather",
 	Flora:      "Flora",
 	Fauna:      "Fauna",
 	Feature:    "Feature",
@@ -133,8 +133,43 @@ var waterTextureSlice = []string{
 
 var waterSparkTable = SparkTable{Nature, NatureType(2).String(), "Tone", "Texture", waterToneSlice, waterTextureSlice}
 
+// First of two weather descriptors
+var weatherDescriptionSlice = []string{
+	"Gentle",
+	"Fleeting",
+	"Persistent",
+	"Bright",
+	"Thin",
+	"Cool",
+	"Hot",
+	"Solid",
+	"Dull",
+	"Faint",
+	"Abundant",
+	"Harsh",
+}
+
+// Second of two weather descriptors
+var weatherElementSlice = []string{
+	"Rain",
+	"Gusts",
+	"Cloud",
+	"Sunlight",
+	"Mist",
+	"Humidity",
+	"Thunder",
+	"Dust",
+	"Warmth",
+	"Drizzle",
+	"Breeze",
+	"Fog",
+}
+
+var weatherSparkTable = SparkTable{Nature, NatureType(3).String(), "Description", "Element", weatherDescriptionSlice, weatherElementSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
 	NatureType(2).String(): waterSparkTable,
+	NatureType(3).String(): weatherSparkTable,
 }
