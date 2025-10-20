@@ -167,9 +167,44 @@ var weatherElementSlice = []string{
 
 var weatherSparkTable = SparkTable{Nature, NatureType(3).String(), "Description", "Element", weatherDescriptionSlice, weatherElementSlice}
 
+// First of two flora descriptors
+var floraNatureSlice = []string{
+	"Aromatic",
+	"Ashen",
+	"Blooming",
+	"Twisted",
+	"Towering",
+	"Fruitful",
+	"Stinging",
+	"Vibrant",
+	"Brittle",
+	"Thorny",
+	"Sturdy",
+	"Resinous",
+}
+
+// Second of two flora descriptors
+var floraFormSlice = []string{
+	"Grasses",
+	"Heather",
+	"Shrubs",
+	"Brambles",
+	"Canopy",
+	"Ferns",
+	"Trunks",
+	"Vines",
+	"Conifers",
+	"Saplings",
+	"Reeds",
+	"Roots",
+}
+
+var floraSparkTable = SparkTable{Nature, NatureType(4).String(), "Nature", "Form", floraNatureSlice, floraFormSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
 	NatureType(2).String(): waterSparkTable,
 	NatureType(3).String(): weatherSparkTable,
+	NatureType(4).String(): floraSparkTable,
 }
