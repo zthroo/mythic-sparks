@@ -99,7 +99,42 @@ var skyTextureSlice = []string{
 
 var skySparkTable = SparkTable{Nature, NatureType(1).String(), "Tone", "Texture", skyToneSlice, skyTextureSlice}
 
+// First of two water descriptors
+var waterToneSlice = []string{
+	"Crystal",
+	"Teal",
+	"Pearlescent",
+	"Mucky",
+	"Cobalt",
+	"Verdant",
+	"Frosted",
+	"Dark",
+	"Verdigris",
+	"Silver",
+	"Emerald",
+	"Jade",
+}
+
+// Second of two water descriptors
+var waterTextureSlice = []string{
+	"Silk",
+	"Ripples",
+	"Abyss",
+	"Churn",
+	"Froth",
+	"Mirror",
+	"Surge",
+	"Glass",
+	"Surf",
+	"Rapids",
+	"Spray",
+	"Bubbles",
+}
+
+var waterSparkTable = SparkTable{Nature, NatureType(2).String(), "Tone", "Texture", waterToneSlice, waterTextureSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
+	NatureType(2).String(): waterSparkTable,
 }
