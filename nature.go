@@ -201,10 +201,45 @@ var floraFormSlice = []string{
 
 var floraSparkTable = SparkTable{Nature, NatureType(4).String(), "Nature", "Form", floraNatureSlice, floraFormSlice}
 
+// First of two fauna descriptors
+var faunaNatureSlice = []string{
+	"Watchful",
+	"Helpful",
+	"Graceful",
+	"Loud",
+	"Mischievous",
+	"Deceitful",
+	"Enlightening",
+	"Placid",
+	"Beautiful",
+	"Mighty",
+	"Hostile",
+	"Aloof",
+}
+
+// Second of two fauna descriptors
+var faunaFormSlice = []string{
+	"Ungulates",
+	"Songbirds",
+	"Canines",
+	"Rodents",
+	"Amphibians",
+	"Insects",
+	"Felines",
+	"Reptiles",
+	"Hawks",
+	"Mustelids",
+	"Fowl",
+	"Bears",
+}
+
+var faunaSparkTable = SparkTable{Nature, NatureType(5).String(), "Nature", "Form", faunaNatureSlice, faunaFormSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
 	NatureType(2).String(): waterSparkTable,
 	NatureType(3).String(): weatherSparkTable,
 	NatureType(4).String(): floraSparkTable,
+	NatureType(5).String(): faunaSparkTable,
 }
