@@ -235,6 +235,108 @@ var faunaFormSlice = []string{
 
 var faunaSparkTable = SparkTable{Nature, NatureType(5).String(), "Nature", "Form", faunaNatureSlice, faunaFormSlice}
 
+// First of two feature descriptors
+var featureNatureSlice = []string{
+	"Buried",
+	"Colourful",
+	"Adorned",
+	"Spiked",
+	"Split",
+	"Entombed",
+	"Reflective",
+	"Veiled",
+	"Hot",
+	"Drowned",
+	"Desecrated",
+	"Isolated",
+}
+
+// Second of two feature descriptors
+var featureFormSlice = []string{
+	"Brook",
+	"Seat",
+	"Pit",
+	"Cave",
+	"Monolith",
+	"Mound",
+	"Cairn",
+	"Pond",
+	"Waterfall",
+	"Spring",
+	"Arch",
+	"Henge",
+}
+
+var featureSparkTable = SparkTable{Nature, NatureType(6).String(), "Nature", "Form", featureNatureSlice, featureFormSlice}
+
+// First of two wonder descriptors
+var wonderThemeSlice = []string{
+	"Pleasure",
+	"Secrets",
+	"Prophecy",
+	"Healing",
+	"Desire",
+	"Memory",
+	"Death",
+	"Strength",
+	"Temptation",
+	"Pain",
+	"Regret",
+	"Time",
+}
+
+// Second of two wonder descriptors
+var wonderElementSlice = []string{
+	"Light",
+	"Flames",
+	"Stones",
+	"Beasts",
+	"Sparks",
+	"Trails",
+	"Mist",
+	"Colors",
+	"Plants",
+	"Wind",
+	"Water",
+	"Shadows",
+}
+
+var wonderSparkTable = SparkTable{Nature, NatureType(7).String(), "Theme", "Element", wonderElementSlice, wonderThemeSlice}
+
+// First of two otherworld descriptors
+var otherworldCharacterSlice = []string{
+	"Acidic",
+	"Black",
+	"Smoke",
+	"Frozen",
+	"Dead",
+	"Broken",
+	"Colossal",
+	"Living",
+	"Burning",
+	"Sludge",
+	"White",
+	"Sweet",
+}
+
+// Second of two otherworld descriptors
+var otherworldLandscapeSlice = []string{
+	"Flats",
+	"Labyrinth",
+	"Ruins",
+	"Stairs",
+	"Desert",
+	"Craters",
+	"Cavern",
+	"Jungle",
+	"Dunes",
+	"Tunnels",
+	"Island",
+	"Mountain",
+}
+
+var otherworldSparkTable = SparkTable{Nature, NatureType(8).String(), "Character", "Landscape", otherworldCharacterSlice, otherworldLandscapeSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
@@ -242,4 +344,7 @@ var natureTableMap = map[string]SparkTable{
 	NatureType(3).String(): weatherSparkTable,
 	NatureType(4).String(): floraSparkTable,
 	NatureType(5).String(): faunaSparkTable,
+	NatureType(6).String(): featureSparkTable,
+	NatureType(7).String(): wonderSparkTable,
+	NatureType(8).String(): otherworldSparkTable,
 }
