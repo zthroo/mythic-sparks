@@ -7,4 +7,5 @@ func main() {
 	GetAndPrintSparkResult(Nature, 3)
 	GetAndPrintSparkResult(Nature, 4)
 	GetAndPrintSparkResult(Nature, 5)
+	GetAndPrintSparkResult(Nature, 6)
 }
