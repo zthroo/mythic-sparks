@@ -269,6 +269,40 @@ var featureFormSlice = []string{
 
 var featureSparkTable = SparkTable{Nature, NatureType(6).String(), "Nature", "Form", featureNatureSlice, featureFormSlice}
 
+// First of two wonder descriptors
+var wonderThemeSlice = []string{
+	"Pleasure",
+	"Secrets",
+	"Prophecy",
+	"Healing",
+	"Desire",
+	"Memory",
+	"Death",
+	"Strength",
+	"Temptation",
+	"Pain",
+	"Regret",
+	"Time",
+}
+
+// Second of two wonder descriptors
+var wonderElementSlice = []string{
+	"Light",
+	"Flames",
+	"Stones",
+	"Beasts",
+	"Sparks",
+	"Trails",
+	"Mist",
+	"Colors",
+	"Plants",
+	"Wind",
+	"Water",
+	"Shadows",
+}
+
+var wonderSparkTable = SparkTable{Nature, NatureType(7).String(), "Theme", "Element", wonderElementSlice, wonderThemeSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
@@ -277,4 +311,5 @@ var natureTableMap = map[string]SparkTable{
 	NatureType(4).String(): floraSparkTable,
 	NatureType(5).String(): faunaSparkTable,
 	NatureType(6).String(): featureSparkTable,
+	NatureType(7).String(): wonderSparkTable,
 }
