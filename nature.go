@@ -303,6 +303,40 @@ var wonderElementSlice = []string{
 
 var wonderSparkTable = SparkTable{Nature, NatureType(7).String(), "Theme", "Element", wonderElementSlice, wonderThemeSlice}
 
+// First of two otherworld descriptors
+var otherworldCharacterSlice = []string{
+	"Acidic",
+	"Black",
+	"Smoke",
+	"Frozen",
+	"Dead",
+	"Broken",
+	"Colossal",
+	"Living",
+	"Burning",
+	"Sludge",
+	"White",
+	"Sweet",
+}
+
+// Second of two otherworld descriptors
+var otherworldLandscapeSlice = []string{
+	"Flats",
+	"Labyrinth",
+	"Ruins",
+	"Stairs",
+	"Desert",
+	"Craters",
+	"Cavern",
+	"Jungle",
+	"Dunes",
+	"Tunnels",
+	"Island",
+	"Mountain",
+}
+
+var otherworldSparkTable = SparkTable{Nature, NatureType(8).String(), "Character", "Landscape", otherworldCharacterSlice, otherworldLandscapeSlice}
+
 var natureTableMap = map[string]SparkTable{
 	NatureType(0).String(): landSparkTable,
 	NatureType(1).String(): skySparkTable,
@@ -312,4 +346,5 @@ var natureTableMap = map[string]SparkTable{
 	NatureType(5).String(): faunaSparkTable,
 	NatureType(6).String(): featureSparkTable,
 	NatureType(7).String(): wonderSparkTable,
+	NatureType(8).String(): otherworldSparkTable,
 }
