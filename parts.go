@@ -55,11 +55,11 @@ type SparkTable struct {
 func GetAndPrintSparkResult(subject Subject, num int) {
 	fmt.Println("Spark:")
 	fmt.Println(subject)
-	fmt.Println(NatureType(num)) //TODO this can't stay hardcoded to NatureType
 
-	var table, err = getSparkTable(subject, NatureType(num).String())
+	table, err := getSparkTable(subject, num)
 
 	if err == nil {
+		fmt.Println(table.subType)
 		fmt.Println(table.descriptor1 + ": " + table.options1[rand.Intn(len(table.options1))])
 		fmt.Println(table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))])
 	} else {
@@ -67,16 +67,26 @@ func GetAndPrintSparkResult(subject Subject, num int) {
 	}
 }
 
-func getSparkTable(subject Subject, tableName string) (SparkTable, error) {
+func getSparkTable(subject Subject, num int) (SparkTable, error) {
 	switch {
 	case subject == Subject(0): //Nature
+		tableName := NatureType(num).String()
 		table, ok := natureTableMap[tableName]
 		if ok {
 			return table, nil
 		} else {
-			return natureTableMap[tableName], errors.New("No spark table for " + subject.String() + " and " + tableName)
+			return natureTableMap[tableName], errors.New("No spark table for Subject: " + subject.String() + " and subtype: " + tableName)
+		}
+	case subject == Subject(1): //Civilization
+		tableName := CivilizationType(num).String()
+		table, ok := civilizationTableMap[tableName]
+		if ok {
+			return table, nil
+		} else {
+			return civilizationTableMap[tableName], errors.New("No spark table for Subject: " + subject.String() + " and subtype: " + tableName)
 		}
 	default:
-		return natureTableMap[tableName], errors.New("No spark table for " + subject.String() + " and " + tableName) //TODO determine better thing to return than a default table on default case here
+		tableName := NatureType(num).String()
+		return natureTableMap[tableName], errors.New("No spark table for Subject: " + subject.String() + " and subtype: " + tableName) //TODO determine better thing to return than a default table on default case here
 	}
 }
