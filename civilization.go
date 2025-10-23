@@ -65,6 +65,41 @@ var holdingFeatureSlice = []string{
 
 var holdingSparkTable = SparkTable{Civilization, CivilizationType(0).String(), "Style", "Feature", holdingStyleSlice, holdingFeatureSlice}
 
+// First of two bailey descriptors
+var baileyStyleSlice = []string{
+	"Dark",
+	"Ruined",
+	"Hostile",
+	"Ancient",
+	"Ornate",
+	"Wild",
+	"Pristine",
+	"Fortified",
+	"Unfinished",
+	"Welcoming",
+	"Proud",
+	"Bright",
+}
+
+// Second of two bailey descriptors
+var baileyFeatureSlice = []string{
+	"Turrets",
+	"Tower",
+	"Wall",
+	"Battlements",
+	"Citadel",
+	"Gate",
+	"Spire",
+	"Dome",
+	"Beacons",
+	"Bridge",
+	"Pillars",
+	"Moat",
+}
+
+var baileySparkTable = SparkTable{Civilization, CivilizationType(1).String(), "Style", "Feature", baileyStyleSlice, baileyFeatureSlice}
+
 var civilizationTableMap = map[string]SparkTable{
 	CivilizationType(0).String(): holdingSparkTable,
+	CivilizationType(1).String(): baileySparkTable,
 }

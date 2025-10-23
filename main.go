@@ -11,4 +11,5 @@ func main() {
 	GetAndPrintSparkResult(Nature, int(Wonder))
 	GetAndPrintSparkResult(Nature, int(Otherworld))
 	GetAndPrintSparkResult(Civilization, int(Holding))
+	GetAndPrintSparkResult(Civilization, int(Bailey))
 }
