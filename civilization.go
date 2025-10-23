@@ -67,39 +67,74 @@ var holdingSparkTable = SparkTable{Civilization, CivilizationType(0).String(), "
 
 // First of two bailey descriptors
 var baileyStyleSlice = []string{
-	"Dark",
-	"Ruined",
-	"Hostile",
-	"Ancient",
-	"Ornate",
-	"Wild",
-	"Pristine",
-	"Fortified",
-	"Unfinished",
-	"Welcoming",
-	"Proud",
-	"Bright",
+	"Filthy",
+	"Abandoned",
+	"Joyous",
+	"Sophisticated",
+	"Industrious",
+	"Humble",
+	"Majestic",
+	"Hallowed",
+	"Rustic",
+	"Solumn",
+	"Bustling",
+	"Immaculate",
 }
 
 // Second of two bailey descriptors
 var baileyFeatureSlice = []string{
-	"Turrets",
-	"Tower",
-	"Wall",
-	"Battlements",
-	"Citadel",
-	"Gate",
-	"Spire",
-	"Dome",
-	"Beacons",
-	"Bridge",
-	"Pillars",
-	"Moat",
+	"Marketplace",
+	"Forge",
+	"Library",
+	"Fountain",
+	"Temple",
+	"Forum",
+	"Tomb",
+	"Garden",
+	"Hall",
+	"Workshops",
+	"Arena",
+	"Garrison",
 }
 
 var baileySparkTable = SparkTable{Civilization, CivilizationType(1).String(), "Style", "Feature", baileyStyleSlice, baileyFeatureSlice}
 
+// First of two keep descriptors
+var keepCenterpieceSlice = []string{
+	"Hearth",
+	"Throne",
+	"Musicians",
+	"Pool",
+	"Advisers",
+	"Servants",
+	"Shrine",
+	"Table",
+	"Reliquary",
+	"Cauldron",
+	"Chandelier",
+	"Guards",
+}
+
+// Second of two keep descriptors
+var keepDecorationSlice = []string{
+	"Antlers",
+	"Silver",
+	"Heraldry",
+	"Bones",
+	"Flowers",
+	"Scripture",
+	"Jewels",
+	"Wreaths",
+	"Candles",
+	"Fur",
+	"Tapestries",
+	"Shields",
+}
+
+var keepSparkTable = SparkTable{Civilization, CivilizationType(2).String(), "Centerpiece", "Decoration", keepCenterpieceSlice, keepDecorationSlice}
+
 var civilizationTableMap = map[string]SparkTable{
 	CivilizationType(0).String(): holdingSparkTable,
 	CivilizationType(1).String(): baileySparkTable,
+	CivilizationType(2).String(): keepSparkTable,
 }
