@@ -1,4 +1,4 @@
-package main
+package parts
 
 import (
 	"errors"
@@ -41,6 +41,36 @@ var subjectName = map[Subject]string{
 // have the subject show up as its name rather than the number value
 func (subject Subject) String() string {
 	return subjectName[subject]
+}
+
+func ParseSubject(input string) (Subject, error) {
+	//TODO strip whitespace, first character uppercase, only alpha
+	switch input {
+	case Nature.String():
+		return Nature, nil
+	case Civilization.String():
+		return Civilization, nil
+	case People.String():
+		return People, nil
+	case Combat.String():
+		return Combat, nil
+	case Person.String():
+		return Person, nil
+	case Name.String():
+		return Name, nil
+	case Characteristic.String():
+		return Characteristic, nil
+	case Object.String():
+		return Object, nil
+	case Beast.String():
+		return Beast, nil
+	case State.String():
+		return State, nil
+	case Theme.String():
+		return Theme, nil
+	}
+
+	return Nature, fmt.Errorf("%q is not a valid Subject type: %w", input, errors.New("invalid subject"))
 }
 
 type SparkTable struct {

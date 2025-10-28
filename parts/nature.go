@@ -1,4 +1,9 @@
-package main
+package parts
+
+import (
+	"errors"
+	"fmt"
+)
 
 type NatureType int
 
@@ -29,6 +34,32 @@ var natureTypeName = map[NatureType]string{
 
 func (natureType NatureType) String() string {
 	return natureTypeName[natureType]
+}
+
+func ParseNatureType(input string) (NatureType, error) {
+	//TODO strip whitespace, first character uppercase, only alpha
+	switch input {
+	case Land.String():
+		return Land, nil
+	case Sky.String():
+		return Sky, nil
+	case Water.String():
+		return Water, nil
+	case Weather.String():
+		return Weather, nil
+	case Flora.String():
+		return Flora, nil
+	case Fauna.String():
+		return Fauna, nil
+	case Feature.String():
+		return Feature, nil
+	case Wonder.String():
+		return Wonder, nil
+	case Otherworld.String():
+		return Otherworld, nil
+	}
+
+	return Land, fmt.Errorf("%q is not a valid Nature type: %w", input, errors.New("invalid nature type"))
 }
 
 // First of two land descriptors
