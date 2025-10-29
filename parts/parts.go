@@ -1,4 +1,4 @@
-package main
+package parts
 
 import (
 	"errors"
@@ -43,6 +43,36 @@ func (subject Subject) String() string {
 	return subjectName[subject]
 }
 
+func ParseSubject(input string) (Subject, error) {
+	//TODO strip whitespace, first character uppercase, only alpha
+	switch input {
+	case Nature.String():
+		return Nature, nil
+	case Civilization.String():
+		return Civilization, nil
+	case People.String():
+		return People, nil
+	case Combat.String():
+		return Combat, nil
+	case Person.String():
+		return Person, nil
+	case Name.String():
+		return Name, nil
+	case Characteristic.String():
+		return Characteristic, nil
+	case Object.String():
+		return Object, nil
+	case Beast.String():
+		return Beast, nil
+	case State.String():
+		return State, nil
+	case Theme.String():
+		return Theme, nil
+	}
+
+	return Nature, fmt.Errorf("%q is not a valid Subject type: %w", input, errors.New("invalid subject"))
+}
+
 type SparkTable struct {
 	Subject
 	subType     string
@@ -64,6 +94,17 @@ func GetAndPrintSparkResult(subject Subject, num int) {
 		fmt.Println(table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))])
 	} else {
 		fmt.Println(err)
+	}
+}
+
+func GetSparkResult(subject Subject, num int) (string, error) {
+	table, err := getSparkTable(subject, num)
+
+	if err == nil {
+		return table.descriptor1 + ": " + table.options1[rand.Intn(len(table.options1))] + " " +
+			table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))], err
+	} else {
+		return "", err
 	}
 }
 

@@ -1,4 +1,9 @@
-package main
+package parts
+
+import (
+	"errors"
+	"fmt"
+)
 
 type CivilizationType int
 
@@ -29,6 +34,32 @@ var civilizationTypeName = map[CivilizationType]string{
 
 func (civilizationType CivilizationType) String() string {
 	return civilizationTypeName[civilizationType]
+}
+
+func ParseCivilizationType(input string) (CivilizationType, error) {
+	//TODO strip whitespace, first character uppercase, only alpha
+	switch input {
+	case Holding.String():
+		return Holding, nil
+	case Bailey.String():
+		return Bailey, nil
+	case Keep.String():
+		return Keep, nil
+	case Food.String():
+		return Food, nil
+	case Goods.String():
+		return Goods, nil
+	case Luxuries.String():
+		return Luxuries, nil
+	case Drama.String():
+		return Drama, nil
+	case Woe.String():
+		return Woe, nil
+	case News.String():
+		return News, nil
+	}
+
+	return Holding, fmt.Errorf("%q is not a valid Civilization type: %w", input, errors.New("invalid Civilization type"))
 }
 
 // First of two holding descriptors
