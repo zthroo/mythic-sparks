@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
-	"os"
 )
 
 // Subject of the spark the user is requesting
@@ -98,16 +97,14 @@ func GetAndPrintSparkResult(subject Subject, num int) {
 	}
 }
 
-func GetSparkResult(subject Subject, num int) string {
+func GetSparkResult(subject Subject, num int) (string, error) {
 	table, err := getSparkTable(subject, num)
 
 	if err == nil {
 		return table.descriptor1 + ": " + table.options1[rand.Intn(len(table.options1))] + " " +
-			table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))]
+			table.descriptor2 + ": " + table.options2[rand.Intn(len(table.options2))], err
 	} else {
-		fmt.Fprintf(os.Stderr, "Oops. An error occured while executing spark '%s'\n", err)
-		os.Exit(1)
-		return "Error"
+		return "", err
 	}
 }
 

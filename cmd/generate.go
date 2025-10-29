@@ -12,8 +12,13 @@ var generateCmd = &cobra.Command{
 	Short:   "Get a spark",
 	Long:    "Get a spark from the provided Subject and Subtype",
 	Args:    cobra.ExactArgs(2),
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("Generation of spark for %s and %s: %s\n\n", args[0], args[1], Generate(args[0], args[1]))
+	RunE: func(cmd *cobra.Command, args []string) error {
+		res, err := Generate(args[0], args[1])
+		if err != nil {
+			return err
+		}
+		fmt.Printf("Generation of spark for %s and %s: %s\n\n", args[0], args[1], res)
+		return nil
 	},
 }
 
