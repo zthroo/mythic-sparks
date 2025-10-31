@@ -198,9 +198,44 @@ var foodTypeSlice = []string{
 
 var foodSparkTable = SparkTable{Civilization, CivilizationType(3).String(), "Quality", "Type", foodQualitySlice, foodTypeSlice}
 
+// First of two goods descriptors
+var goodsThemeSlice = []string{
+	"Military",
+	"Abundant",
+	"Traditional",
+	"Specialist",
+	"Industrious",
+	"Innovative",
+	"Secretive",
+	"Simple",
+	"Strong",
+	"Decorated",
+	"Fine",
+	"Lucky",
+}
+
+// Second of two goods descriptors
+var goodsTypeSlice = []string{
+	"Textile",
+	"Livestock",
+	"Grain",
+	"Mead",
+	"Tools",
+	"Stone",
+	"Wood",
+	"Pottery",
+	"Metal",
+	"Leather",
+	"Honey",
+	"Herb",
+}
+
+var goodsSparkTable = SparkTable{Civilization, CivilizationType(4).String(), "Theme", "Type", goodsThemeSlice, goodsTypeSlice}
+
 var civilizationTableMap = map[string]SparkTable{
 	CivilizationType(0).String(): holdingSparkTable,
 	CivilizationType(1).String(): baileySparkTable,
 	CivilizationType(2).String(): keepSparkTable,
 	CivilizationType(3).String(): foodSparkTable,
+	CivilizationType(4).String(): goodsSparkTable,
 }
