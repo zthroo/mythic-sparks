@@ -164,8 +164,43 @@ var keepDecorationSlice = []string{
 
 var keepSparkTable = SparkTable{Civilization, CivilizationType(2).String(), "Centerpiece", "Decoration", keepCenterpieceSlice, keepDecorationSlice}
 
+// First of two food descriptors
+var foodQualitySlice = []string{
+	"Spiced",
+	"Herbal",
+	"Crunchy",
+	"Sour",
+	"Dry",
+	"Fermented",
+	"Salted",
+	"Wet",
+	"Fatty",
+	"Chewy",
+	"Sweet",
+	"Mild",
+}
+
+// Second of two food descriptors
+var foodTypeSlice = []string{
+	"Fish",
+	"Fruit",
+	"Stew",
+	"Mushrooms",
+	"Pie",
+	"Cheese",
+	"Nuts",
+	"Cake",
+	"Porridge",
+	"Bread",
+	"Vegetables",
+	"Meat",
+}
+
+var foodSparkTable = SparkTable{Civilization, CivilizationType(3).String(), "Quality", "Type", foodQualitySlice, foodTypeSlice}
+
 var civilizationTableMap = map[string]SparkTable{
 	CivilizationType(0).String(): holdingSparkTable,
 	CivilizationType(1).String(): baileySparkTable,
 	CivilizationType(2).String(): keepSparkTable,
+	CivilizationType(3).String(): foodSparkTable,
 }
